@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+buildscript {
+    
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		
+	}
+	
+}
+
+// Creates project directories
+task "create-dirs" << {
+	
+    Closure createDirs = {
+        println it.toString()
+        it.mkdirs()
+    }
+    project.sourceSets*.java.srcDirs*.each createDirs
+    project.sourceSets*.resources.srcDirs*.each createDirs
+    project.sourceSets*.groovy.srcDirs*.each createDirs
+    //createDirs project.webAppDir
+ }
