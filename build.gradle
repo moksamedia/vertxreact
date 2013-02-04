@@ -1,6 +1,10 @@
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
 
+// PROJECT NAME & VERSION
+project.name = "SOME NEW PROJECT"
+project.version = 0.1
+
 buildscript {
     
 	repositories {
