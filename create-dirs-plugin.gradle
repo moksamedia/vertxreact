@@ -10,7 +10,7 @@ task "create-dirs" << {
     project.sourceSets*.groovy.srcDirs*.each createDirs
  }
 
-task create-dirs-webapp << {
+task "create-dirs-webapp" << {
 
 	Closure createDirs = {
 	    println it.toString()
