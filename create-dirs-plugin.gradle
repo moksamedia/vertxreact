@@ -1,0 +1,23 @@
+// Creates project directories
+task "create-dirs" << {
+	
+    Closure createDirs = {
+        println it.toString()
+        it.mkdirs()
+    }
+    project.sourceSets*.java.srcDirs*.each createDirs
+    project.sourceSets*.resources.srcDirs*.each createDirs
+    project.sourceSets*.groovy.srcDirs*.each createDirs
+ }
+
+task create-dirs-webapp << {
+
+	Closure createDirs = {
+	    println it.toString()
+	    it.mkdirs()
+	}
+
+    createDirs new File('src/main/webapp')
+    createDirs new File('src/main/webapp/WEB-INF')
+
+}

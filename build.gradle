@@ -1,9 +1,13 @@
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
+apply from: 'https://raw.github.com/moksamedia/basic-gradle-project/master/create-dirs-plugin.gradle'
 
-// PROJECT VERSION
+// PROJECT VERSION & GROUP
 project.version = 0.1
 project.group = 'com.moksamedia'
+
+// CAPTURE STANDARD OUTPUT
+logging.captureStandardOutput(LogLevel.ERROR)
 
 repositories {
 	mavenCentral()
@@ -29,17 +33,3 @@ dependencies {
 	/* SERVLET API 2.5 */
 	//provided 'javax.servlet:servlet-api:2.5'
 }
-	
-
-// Creates project directories
-task "create-dirs" << {
-	
-    Closure createDirs = {
-        println it.toString()
-        it.mkdirs()
-    }
-    project.sourceSets*.java.srcDirs*.each createDirs
-    project.sourceSets*.resources.srcDirs*.each createDirs
-    project.sourceSets*.groovy.srcDirs*.each createDirs
-    //createDirs project.webAppDir
- }
