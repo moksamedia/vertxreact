@@ -3,6 +3,7 @@ apply plugin: 'eclipse'
 
 // PROJECT VERSION
 project.version = 0.1
+project.group = 'com.moksamedia'
 
 repositories {
 	mavenCentral()
@@ -10,6 +11,23 @@ repositories {
 	
 dependencies {
 		
+	/* JUNIT */
+	testCompile 'junit:junit:4.10'
+	
+	/* SPOCK */
+	testCompile 'org.spockframework:spock-core:0.7-groovy-1.8'
+	
+	/* LOGGING */
+	compile 'org.slf4j:slf4j-api:1.7.4',
+			'ch.qos.logback:logback-classic:1.0.1'  // Logback
+			//'org.slf4j:slf4j-log4j12:1.7.4',	    // Log4j
+			//'log4j:log4j:1.2.17'		
+	
+	/* GROOVY */
+	groovy 'org.codehaus.groovy:groovy-all:1.8.+'
+	
+	/* SERVLET API 2.5 */
+	//provided 'javax.servlet:servlet-api:2.5'
 }
 	
 
