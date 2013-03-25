@@ -1,6 +1,8 @@
 // Creates project directories
 task "create-dirs" << {
 	
+	description = 'Creates groovy, java, and resource directories for both main and test.'
+	
     Closure createDirs = {
         println it.toString()
         it.mkdirs()
@@ -11,6 +13,8 @@ task "create-dirs" << {
  }
 
 task "create-dirs-webapp" << {
+
+	description = 'Creates src/main/webapp and src/main/webapp/WEB-INF'
 
 	Closure createDirs = {
 	    println it.toString()
