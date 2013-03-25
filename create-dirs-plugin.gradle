@@ -1,5 +1,5 @@
 // Creates project directories
-task "create-dirs" << {
+task "create-dirs" {
 	
 	description = 'Creates groovy, java, and resource directories for both main and test.'
 	
@@ -7,12 +7,15 @@ task "create-dirs" << {
         println it.toString()
         it.mkdirs()
     }
-    project.sourceSets*.java.srcDirs*.each createDirs
-    project.sourceSets*.resources.srcDirs*.each createDirs
-    project.sourceSets*.groovy.srcDirs*.each createDirs
- }
 
-task "create-dirs-webapp" << {
+	doLast {
+    	project.sourceSets*.java.srcDirs*.each createDirs
+    	project.sourceSets*.resources.srcDirs*.each createDirs
+    	project.sourceSets*.groovy.srcDirs*.each createDirs
+	}
+}
+
+task "create-dirs-webapp" {
 
 	description = 'Creates src/main/webapp and src/main/webapp/WEB-INF'
 
@@ -21,7 +24,9 @@ task "create-dirs-webapp" << {
 	    it.mkdirs()
 	}
 
-    createDirs new File('src/main/webapp')
-    createDirs new File('src/main/webapp/WEB-INF')
+	doLast {
+    	createDirs new File('src/main/webapp')
+    	createDirs new File('src/main/webapp/WEB-INF')
+	}
 
 }
