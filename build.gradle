@@ -1,6 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
-apply from: 'https://raw.github.com/moksamedia/basic-gradle-project/master/create-dirs-plugin.gradle'
+//apply plugin: 'jetty'
+apply from: 'https://raw.github.com/moksamedia/gradle-plugins/master/create-dirs-plugin.gradle'
 
 // PROJECT VERSION & GROUP
 project.version = 0.1
