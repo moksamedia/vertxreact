@@ -1,0 +1,39 @@
+apply plugin: 'groovy'
+
+// PROJECT VERSION & GROUP
+project.version = 0.1
+project.group = 'net.entangledmedia.vertxreact'
+
+// CAPTURE STANDARD OUTPUT
+logging.captureStandardOutput(LogLevel.ERROR)
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+    vertxVersion = '3.1.0'
+}
+
+dependencies {
+
+	compile (
+			"io.vertx:vertx-core:$project.vertxVersion",
+			"io.vertx:vertx-web:$project.vertxVersion"
+	)
+
+	/* LOGGING */
+	compile (
+			'org.slf4j:slf4j-api:1.7.4',
+			'org.slf4j:slf4j-log4j12:1.7.4',
+			'log4j:log4j:1.2.17'
+	)
+
+	/* GROOVY */
+	compile 'org.codehaus.groovy:groovy-all:2.4.+'
+
+
+	/* JUNIT */
+	testCompile 'junit:junit:4.10'
+
+}
