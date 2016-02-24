@@ -26,9 +26,6 @@ public class SimpleRESTTest {
     @BeforeClass
     static void setup() {
 
-        //config = new ConfigSlurper('functionalTesting').parse(this.class.getResourceAsStream('/test-config.groovy').text)
-        //DeploymentOptions options = new DeploymentOptions().setConfig(new JsonObject(JsonOutput.toJson(config)));
-
         VertxOptions vertxOptions = new VertxOptions();
 
         // Lets not worry about blocking the main thread during testing

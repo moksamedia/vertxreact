@@ -31,15 +31,13 @@ public class SimpleREST extends AbstractVerticle {
 
         def routesConfig = new ConfigSlurper().parse(routesConfigText)
 
-        int pathIndex = routesConfig.index.path
-        int methodIndex = routesConfig.index.method
-        int handlerIndex = routesConfig.index.handler
+        def index = routesConfig.index
 
         routesConfig.routes.each { route ->
 
-            String path = route[pathIndex]
-            String method = route[methodIndex].toLowerCase()
-            String handler = route[handlerIndex]
+            String path = route[index.path]
+            String method = route[index.method].toLowerCase()
+            String handler = route[index.handler]
 
             log.info("Loading route: ${method} ${path} --> ${handler}")
 
